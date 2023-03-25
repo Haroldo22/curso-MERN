@@ -29,7 +29,7 @@ export function AdminRouter() {
       <Route path="/admin/*" element={ loadLayout(AdminLayout, Auth) }/>
     ) : (
       <>
-      {/*El arreglo con funcion .map() de abajo es utilizado para que una pagina tenga dos paths, es decir, que en dos direcciones diferentes se renderize los mismo componentes */}
+      {/*El arreglo con funcion .map() de abajo es utilizado para que una pagina tenga dos paths, es decir, que en dos direcciones diferentes se renderize los mismos componentes */}
         {["/admin", "/admin/blog"].map((path) => (
           <Route key={path} path={path} element={ loadLayout(AdminLayout, Blog) } />
         ))}
