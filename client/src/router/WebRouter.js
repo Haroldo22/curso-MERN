@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route} from "react-router-dom"
 import { ClientLayout } from '../layouts'
-import { Home } from "../pages/web"
+import { Home, Blog, Contact, Courses, Post } from "../pages/web"
 
 export function WebRouter() {
 
@@ -16,6 +16,10 @@ export function WebRouter() {
   return (
     <Routes>
         <Route path="/" element={ loadLayout(ClientLayout, Home) }/>
+        <Route path="/courses" element={ loadLayout(ClientLayout, Courses) }/>
+        <Route path="/contact" element={ loadLayout(ClientLayout, Contact) }/>
+        <Route path="/blog" element={ loadLayout(ClientLayout, Blog) }/>
+        <Route path="/blog/:path" element={ loadLayout(ClientLayout, Post) }/> {/**El :path sirve para dejarlo como variable ya que la direccion de los post se generara de manera dinamica*/}
     </Routes>
   )
 }
